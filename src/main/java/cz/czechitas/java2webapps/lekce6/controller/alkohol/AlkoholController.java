@@ -15,18 +15,18 @@ import java.util.Random;
  *
  */
 @Controller
-@RequestMapping("/alkohol")
+@RequestMapping("/alkohol") // cesta v prohližeči
 public class AlkoholController {
     private final Random random = new Random();
 
-    @GetMapping("")
+    @GetMapping("") // cesta v prohližeči
     public ModelAndView index() {
-        ModelAndView modelAndView = new ModelAndView("/alkohol/formular");
+        ModelAndView modelAndView = new ModelAndView("/alkohol/formular"); // cesta k alkohol/formular.ftlh
         modelAndView.addObject("form", new AlkoholForm());
         return modelAndView;
     }
 
-    @PostMapping("")
+    @PostMapping("") // cesta v prohližeči
     public Object form(@Valid @ModelAttribute("form") AlkoholForm form, BindingResult bindingResult) {
 /*
     if (form.getVek() < 18) {
